@@ -18,7 +18,7 @@ export default function App() {
           </a>{" "}
           and is{" "}
           <a
-            href="https://www.shecodes.io/"
+            href="https://github.com/lmiya9/weather-react-m"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -26,7 +26,7 @@ export default function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://www.shecodes.io/"
+            href="ml-weather-react.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
           >
