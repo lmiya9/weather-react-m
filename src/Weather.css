@@ -1,0 +1,76 @@
+
+:root {
+  --main-color: #d9b0d9;
+  --light-shade-1: #fdfdf5;
+  --light-shade-2: #f1dbf1;
+  --dark-shade-1: #c39ac3;
+  --accent: #498384;
+  --font: #995299;
+}
+
+.form-control.highlight:focus {
+  color: var(--accent)!important;}
+
+.card.card-1 {
+  font-family: arial, sans-serif;
+  border: 1px solid (var(--light-shade-2));
+  padding: 50px;
+  color: var(--font);
+  background-color: var(--light-shade-1);
+}
+
+.Weather h1 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+
+.Weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Weather li {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
+}
+
+.Weather .temperature {
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 64px;
+  line-height: 64px;
+  margin-left: 5px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.Weather canvas {
+  margin: 10px auto;
+}
+
+.Weather .unit {
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+}
+
+.btn.btn-search {
+  background-color: var(--accent);
+  color: #ffffff;
+  transition: all ease-in-out 200ms;
+}
+
+.btn.btn-search:hover {
+  background-color: #3ec2c4;
+  color: #ffffff;
+}
+
+.lighter-shade {
+color: var(--accent);
+}
