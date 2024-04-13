@@ -18,14 +18,18 @@ export default function App() {
           </a>{" "}
           and is{" "}
           <a
-            href="https://github.com/lmiya9/SC-Weather-react"
+            href="https://www.shecodes.io/"
             target="_blank"
             rel="noopener noreferrer"
           >
             open-sourced on GitHub
           </a>{" "}
           and{" "}
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.shecodes.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             hosted on Netlify
           </a>
         </footer>
