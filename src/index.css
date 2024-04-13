@@ -1,5 +1,14 @@
 
 body {
   background-image: url("Wave@1x-10.0s-1632px-858px.svg");
-  background-color: #fdfdf5;
+  background-repeat: no-repeat; 
+  background-color: #fdfdf5!important;
+
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-color: #A86DA7!important;
+    background-image:none;
+  }
 }
