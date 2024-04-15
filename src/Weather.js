@@ -8,6 +8,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [loading, setLoading] = useState(false);
 
   function handleResponse(response) {
     setWeatherData({
@@ -32,19 +33,57 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function handleLocation() {
+    setLoading(true); // Set loading state to true when starting geolocation
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const apiKey = "6782253072f7d90462731a624097fc54";
+          const units = "metric";
+          const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+          axios.get(apiUrl).then((response) => {
+            handleResponse(response);
+            setLoading(false); // Set loading state to false after successful response
+          });
+        },
+        (error) => {
+          console.error("Error getting geolocation:", error);
+          setLoading(false); // Set loading state to false if there's an error
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+      setLoading(false); // Set loading state to false if geolocation is not supported
+    }
+  }
+
   function search() {
+    setLoading(true); // Set loading state to true when starting search
+
     const apiKey = "6782253072f7d90462731a624097fc54";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then((response) => {
+      handleResponse(response);
+      setLoading(false); // Set loading state to false after successful response
+    });
+  }
+
+  if (loading) {
+    
+    return <img src="public/loading.gif" alt="Loading..."></img>;
   }
 
   if (weatherData.ready) {
+    // Render weather information when data is ready
     return (
       <div className="Weather">
         <div className="card card-1">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-9">
+              <div className="col-8">
                 <input
                   type="search"
                   placeholder="Enter a city.."
@@ -53,11 +92,18 @@ export default function Weather(props) {
                   onChange={handleCityChange}
                 />
               </div>
-              <div className="col-3">
+              <div className="col-4">
                 <input
                   type="submit"
                   value="Search"
-                  className="btn btn-search"
+                  className="btn btn-search mr-2"
+                />
+                &nbsp;
+                <input
+                  type="button"
+                  onClick={handleLocation}
+                  value="Location"
+                  className="btn"
                 />
               </div>
             </div>
@@ -73,7 +119,8 @@ export default function Weather(props) {
       </div>
     );
   } else {
+    // If weather data is not ready, initiate search
     search();
-    return "Loading...";
+    return null; // Return null while waiting for data
   }
 }
