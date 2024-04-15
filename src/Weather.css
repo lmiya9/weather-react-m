@@ -98,6 +98,12 @@ transform: scale(1.1);
 .lighter-shade {
 color: var(--accent);
 }
+
+/* .line hr {
+   width: 50%;
+   margin:0 auto;
+} */
+
 @media screen and (max-width: 767px) {
   .Weather h1 {
     font-size: 40px;

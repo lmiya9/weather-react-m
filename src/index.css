@@ -12,3 +12,9 @@ body {
     background-image:none;
   }
 }
+@media screen and (min-width: 1630px) {
+  body {
+    background-color: #A86DA7!important;
+    background-image:none;
+  }
+}
