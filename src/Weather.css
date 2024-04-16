@@ -99,16 +99,20 @@ transform: scale(1.1);
 color: var(--accent);
 }
 
-/* .line hr {
-   width: 50%;
-   margin:0 auto;
-} */
+.location-button {
+  color: var(--accent)!important;
+  transition: all ease-in-out 200ms;
+}
 
+.location-button:hover {
+  color: #ffffff!important;
+  color: #3ec2c4!important;
+}
 
 @media screen and (max-width: 767px) {
   .Weather h1 {
     font-size: 40px;
-    padding-top: 10px;
+    padding-top: 15px;
     text-align: center;
   }
   .Weather h4 {

@@ -7,7 +7,7 @@ import "./Weather.css";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <p className="mt-2">
+      <p className="mt-2 d-none d-md-block">
         Last updated: <FormattedDate date={props.data.date} />
       </p>
       <h1>{props.data.city}</h1>

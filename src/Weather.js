@@ -73,7 +73,7 @@ export default function Weather(props) {
 
   if (loading) {
     
-    return <img src="public/loading.gif" alt="Loading..."></img>;
+    return <img src="/loading.svg" alt="Loading..." />;
   }
 
   if (weatherData.ready) {
