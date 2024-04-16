@@ -100,7 +100,7 @@ export default function Weather(props) {
                     className="btn btn-search"
                   />
                 </div>
-                <div className="location-button">
+                <div className="location-button" id = "location-button">
                   <input
                     type="button"
                     onClick={handleLocation}

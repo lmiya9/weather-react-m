@@ -8,8 +8,14 @@
   --font: #995299;
 }
 
-.form-control.highlight:focus {
-  color: var(--accent)!important;}
+input.form-control.highlight:focus {
+  border-color: var(--font)!important;
+  color: var(--font);
+  /* box-shadow: 0 1px 1px rgba(153,82,153, 0.9); */
+  box-shadow: 0 1px 1px rgba(153,82,153, 0.075) inset, 0 0 8px rgba(153,82,153, 0.6);
+  outline: 0 none;
+}
+  
 
 .card.card-1 {
   font-family: arial, sans-serif;
@@ -48,6 +54,15 @@ transform: scale(1.1);
   font-weight: 800;
 }
 
+.Weather h4 {
+color: #000000;
+opacity: 0.7;
+}
+
+p.date {
+color: #000000;
+opacity: 0.7;
+}
 
 .Weather ul {
   margin: 0;
@@ -99,12 +114,12 @@ transform: scale(1.1);
 color: var(--accent);
 }
 
-.location-button {
-  color: var(--accent)!important;
+ #location-button input.btn{
+  color: var(--accent);
   transition: all ease-in-out 200ms;
 }
 
-.location-button:hover {
+#location-button input.btn:hover{
   color: #ffffff!important;
   color: #3ec2c4!important;
 }
