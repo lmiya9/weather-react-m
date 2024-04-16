@@ -83,7 +83,7 @@ export default function Weather(props) {
         <div className="card card-1">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-8">
+              <div className="col-md-8 col-6">
                 <input
                   type="search"
                   placeholder="Enter a city.."
@@ -92,19 +92,22 @@ export default function Weather(props) {
                   onChange={handleCityChange}
                 />
               </div>
-              <div className="col-4">
-                <input
-                  type="submit"
-                  value="Search"
-                  className="btn btn-search mr-2"
-                />
-                &nbsp;
-                <input
-                  type="button"
-                  onClick={handleLocation}
-                  value="Location"
-                  className="btn"
-                />
+              <div className="col-md-4 col-6 d-flex justify-content-start">
+                <div className="search-button mr-2">
+                  <input
+                    type="submit"
+                    value="Search"
+                    className="btn btn-search"
+                  />
+                </div>
+                <div className="location-button">
+                  <input
+                    type="button"
+                    onClick={handleLocation}
+                    value="Location"
+                    className="btn"
+                  />
+                </div>
               </div>
             </div>
           </form>
